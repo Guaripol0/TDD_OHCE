@@ -5,3 +5,6 @@ def echo(text, name=""):
     if text == reversed_text:
         return f"{reversed_text}\n¡Bonita palabra!"
     return reversed_text
+
+def saludo(name, hora):
+    return f"¡Hola {name}!"
