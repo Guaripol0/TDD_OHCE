@@ -9,3 +9,6 @@ def test_echo_palindrome_word():
     assert ohce.echo("madam") == "madam\n¡Bonita palabra!"
     assert ohce.echo("racecar") == "racecar\n¡Bonita palabra!"
     assert ohce.echo("level") == "level\n¡Bonita palabra!"
+
+def test_stop_returns_goodbye():
+    assert ohce.echo("Stop!", name="Pedro") == "Adios Pedro"
