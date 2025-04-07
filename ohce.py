@@ -20,3 +20,6 @@ def run_ohce(nombre, hora=None):
     if hora is None:
         hora = datetime.now()
     return saludo(nombre, hora)
+
+def ohce_loop(nombre, entradas, hora=None):
+    return f"Buenos días {nombre}!" if hora is None else run_ohce(nombre, hora)

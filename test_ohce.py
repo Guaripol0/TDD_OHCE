@@ -31,3 +31,14 @@ def test_saludo_noches():
     hora = hora_mock(21)
     salida = ohce.run_ohce("Pedro", hora)
     assert salida == "¡Buenas noches Pedro!"
+
+def test_ohce_loop_completo_con_stop():
+    hora = hora_mock(8)
+    entradas = ["hola", "madam", "Stop!"]
+    salidas = ohce.ohce_loop("Pedro", entradas, hora)
+
+    assert salidas[0] == "¡Buenos días Pedro!"
+    assert salidas[1] == "aloh"
+    assert salidas[2] == "madam\n¡Bonita palabra!"
+    assert salidas[3] == "Adios Pedro"
+    assert len(salidas) == 4  # Se detiene después de Stop!
