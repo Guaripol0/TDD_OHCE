@@ -22,4 +22,16 @@ def run_ohce(nombre, hora=None):
     return saludo(nombre, hora)
 
 def ohce_loop(nombre, entradas, hora=None):
-    return f"Buenos días {nombre}!" if hora is None else run_ohce(nombre, hora)
+    if hora is None:
+        from datetime import datetime
+        hora = datetime.now()
+
+    salidas = [saludo(nombre, hora)]
+
+    for entrada in entradas:
+        salida = echo(entrada, nombre)
+        salidas.append(salida)
+        if entrada == "Stop!":
+            break
+
+    return salidas
